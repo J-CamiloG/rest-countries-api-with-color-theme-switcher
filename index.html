@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Countries API with color theme switcher</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+  </head>
+  <body>
+    <nav class="box">
+      <div class="nav-container container flex">
+        <h1 class="nav-title">Where in the world?</h1>
+        <div class="menu flex">
+          <div>
+            <a href="./index.html" target="_self"></a>
+            <img src="./images/icon-moon.svg" alt="" class="dark-mode hidden" />
+            <img src="./images/icon-sun.svg" alt="" class="light-mode" />
+          </div>
+          <p class="menu-title">Light Mode</p>
+          <a href="" target="_self"></a>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <section class="input-section flex flex-col">
+        <input
+          type="text"
+          name="text"
+          id="input-search"
+          class="box"
+          placeholder="Seach a country..."
+        />
+        <select name="region" id="region" class="box">
+          <option value="filterRegion" selected disabled>
+            Filter by Region
+          </option>
+          <option value="Africa">Africa</option>
+          <option value="Americas">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+          <option value="All">All</option>
+        </select>
+      </section>
+      <section class="country-section flex">
+        <div class="country-data flex"></div>
+        <div class="selected-country container"></div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

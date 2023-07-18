@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+:root {
+  /* (Dark Mode Elements) */
+  --bg-box: hsl(209, 23%, 22%);
+  --bg-box-hover: hsl(209, 23%, 27%);
+  /* (Dark Mode Background) */
+  --bg-body: hsl(207, 26%, 17%);
+  --txt-color: hsl(0, 0%, 100%);
+  --box-shadow-box: hsl(207, 26%, 16%);
+}
+
+.light-mode {
+  /* (Light Mode Text) */
+  --txt-color: hsl(200, 15%, 8%);
+  /* (Light Mode Input) */
+  --Dark-Gray: hsl(0, 0%, 52%);
+  --box-shadow-box: hsl(0, 0%, 95%);
+  /* (Light Mode Background) */
+  --bg-body: hsl(0, 0%, 98%);
+  --bg-box: hsl(0, 0%, 100%);
+  --bg-box-hover: hsl(0, 0%, 90%);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-transform: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--bg-body);
+  color: var(--txt-color);
+}
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex-col {
+  flex-direction: column;
+}
+h1,
+h2,
+.menu p,
+.selected-country p {
+  font-weight: 800;
+}
+h1 {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+}
+h2 {
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  margin-bottom: 2rem;
+}
+p {
+  font-size: clamp(1.6rem, 1.5vw, 1.8rem);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--txt-color);
+}
+.box {
+  box-shadow: 0 0 3px 3px var(--box-shadow-box);
+  border-radius: 5px;
+  overflow: hidden;
+}
+button {
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+  background-color: var(--bg-box);
+  color: var(--txt-color);
+  font-weight: 800;
+  box-shadow: 0 0 3px 3px var(--box-shadow-box);
+}
+
+button:hover {
+  background-color: var(--bg-box-hover);
+  transition: 600ms;
+  cursor: pointer;
+}
+.container {
+  width: clamp(30rem, 90%, 120rem);
+  margin-inline: auto;
+}
+/* nav section */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-box);
+  opacity: 0.95;
+  z-index: 15;
+}
+.nav,
+.nav-container {
+  height: 8rem;
+}
+.nav-container {
+  justify-content: space-between;
+}
+.menu {
+  width: clamp(12rem, 16vw, 13rem);
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.menu div {
+  flex: 0.8;
+}
+.menu div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.menu div img {
+  width: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+.menu p {
+  flex: 4;
+  margin: 0;
+}
+/* main container */
+/* input section */
+main {
+  padding-top: 11rem;
+}
+.input-section {
+  align-items: stretch;
+  padding: 3rem 0;
+  opacity: 1;
+  transition: opacity 600ms;
+}
+#input-search,
+#region {
+  padding: 1.5rem 2rem 1.5rem 4rem;
+  border: none;
+  background-color: var(--bg-box);
+  color: var(--txt-color);
+}
+#region {
+  width: 65%;
+}
+#input-search::placeholder {
+  color: var(--txt-color);
+}
+.input-section,
+.country-data,
+.country-box {
+  gap: 3rem;
+}
+.country-data {
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+.country-box {
+  background-color: var(--bg-box);
+  width: 27.5rem;
+  height: clamp(38rem, 40vw, 42rem);
+  align-items: flex-start;
+}
+.country-box:hover {
+  background-color: var(--bg-box-hover);
+  transition: 600ms;
+  cursor: pointer;
+}
+
+.country-box .img-flag {
+  width: 100%;
+  height: 18rem;
+}
+.country-box .img-flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.country-info {
+  padding: 0 3rem 3rem;
+}
+/* Selected country */
+.selected-country {
+  width: 100%;
+  z-index: 1;
+  display: none;
+  padding: 5rem 0;
+}
+.btn-back,
+.selected-info > div {
+  margin-bottom: 5rem;
+}
+.selected-country > .flex {
+  gap: clamp(5rem, 8vw, 10rem);
+  align-items: flex-start;
+}
+.selected-country .flex .img-selected,
+.selected-country .flex .selected-info {
+  flex: 1;
+}
+.selected-info {
+  width: 100%;
+}
+.selected-info div {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.selected-country h1 {
+  margin-bottom: 3rem;
+}
+.selected-country p {
+  margin-bottom: 2rem;
+}
+.selected-country p span {
+  font-weight: 300;
+}
+.img-selected,
+.img-selected img {
+  width: 100%;
+  height: 100%;
+}
+.btn-border {
+  align-items: flex-start;
+}
+.btn-border span:first-child {
+  font-weight: 800;
+}
+.btn-border span:last-child {
+  margin-top: 1rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.show-selected {
+  display: block;
+}
+.hide-country {
+  display: none;
+}
+@media (min-width: 768px) {
+  .country-section {
+    justify-content: stretch;
+  }
+  .flex-col {
+    flex-direction: row;
+  }
+  .menu p {
+    flex: 2;
+  }
+  .menu div {
+    flex: 0.5;
+  }
+  .country-data,
+  .input-section {
+    justify-content: space-between;
+  }
+  #input-search {
+    width: 60%;
+  }
+  #region {
+    width: 25%;
+  }
+  .country-box {
+    flex-direction: column;
+  }
+  p.btn-border {
+    flex-direction: column;
+    margin-bottom: 0;
+    align-items: flex-start;
+  }
+  .btn-border span:first-child {
+    flex: 1;
+  }
+  .btn-border span:last-child {
+    flex: 2;
+    margin-top: 0;
+  }
+  .selected-country > .flex {
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  p.btn-border {
+    flex-direction: row;
+  }
+}
